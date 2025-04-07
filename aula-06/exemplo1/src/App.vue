@@ -1,18 +1,10 @@
 <script setup lang="ts">
     import { ref } from "vue";
-
     let contador1 = ref(0);
     let contador2 = ref(0);
     let boolean = ref(true);
-    console.log(boolean.value);
-
-    function somar() {
-        return contador1.value + contador2.value;
-    }
-
-    function inverter() {
-        boolean.value == !boolean.value;
-    }
+    const somar = () => contador1.value + contador2.value;
+    const inverter = () => boolean.value = !boolean.value;
 </script>
 
 <template>
@@ -55,7 +47,7 @@
     <div v-else>
         <p>Falso</p>
     </div>
-    <button @click="inverter()">Inverter</button>
+    <button @click="inverter">Inverter</button>
   </div>
 </template>
 
