@@ -4,6 +4,7 @@
   const newsletter = ref([
     {
       id: 1,
+      cover: "https://noticias.memoria.araquari.ifc.edu.br/wp-content/uploads/sites/11/2016/12/IMG_0841-300x169.jpg",
       title: "Mochila roubada no IFC",
       date: "03/04/2025",
       font: "www.araquarinews.com.br",
@@ -12,6 +13,7 @@
     },
     {
       id: 2,
+      cover: "https://noticias.memoria.araquari.ifc.edu.br/wp-content/uploads/sites/11/2016/12/IMG_0841-300x169.jpg",
       title: "Mochila roubada no IFC",
       date: "04/04/2025",
       font: "www.araquarinews.com.br",
@@ -20,6 +22,7 @@
     },
     {
       id: 3,
+      cover: "https://noticias.memoria.araquari.ifc.edu.br/wp-content/uploads/sites/11/2016/12/IMG_0841-300x169.jpg",
       title: "Mochila roubada no IFC",
       date: "05/04/2025",
       font: "www.araquarinews.com.br",
@@ -28,6 +31,7 @@
     },
     {
       id: 4,
+      cover: "https://noticias.memoria.araquari.ifc.edu.br/wp-content/uploads/sites/11/2016/12/IMG_0841-300x169.jpg",
       title: "Mochila roubada no IFC",
       date: "06/04/2025",
       font: "www.araquarinews.com.br",
@@ -36,6 +40,7 @@
     },
     {
       id: 5,
+      cover: "https://noticias.memoria.araquari.ifc.edu.br/wp-content/uploads/sites/11/2016/12/IMG_0841-300x169.jpg",
       title: "Mochila roubada no IFC",
       date: "07/04/2025",
       font: "www.araquarinews.com.br",
@@ -46,17 +51,27 @@
 </script>
 <template>
   <h1>IFLetter</h1>
-  <div class="news">
+  <article class="news">
     <ul>
       <li v-for="(news, id) in newsletter" :key="id">
-        {{ news.title }} | {{ news.date }}<br>
-        {{ news.subject }}<br>
-        Fonte: {{ news.font }}<br>
-        Link para o mesmo: <a>{{ news.address }}</a>
+        <h2>{{ news.title }} | {{ news.date }}</h2>
+        <img :src="news.cover" alt="Capa da noticia">
+        <p>{{ news.subject }}</p>
+        <div>
+          <p>Fonte: <a :href="news.address">{{ news.address }}</a></p>
+          <p>Link para o mesmo: {{ news.address }}</p>
+        </div>
       </li>
     </ul>
-  </div>
+  </article>
 </template>
 <style scoped>
-
+  ul {
+    /*display: flex;*/
+    list-style: none;
+    text-align: center;
+  }
+  /*img {
+    
+  }*/
 </style>
